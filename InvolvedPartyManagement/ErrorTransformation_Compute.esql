@@ -1,5 +1,5 @@
 
---to prepare SOAP Fault
+--to1 prepare SOAP Fault
 CREATE COMPUTE MODULE ErrorTransformation_Compute
 	CREATE FUNCTION Main() RETURNS BOOLEAN  
 	BEGIN
