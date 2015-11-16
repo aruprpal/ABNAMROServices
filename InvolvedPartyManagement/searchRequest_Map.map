@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="default" version="8.0.4.0" xmlns="http://www.ibm.com/2008/ccl/Mapping" xmlns:map="default">
+    <input path="/InvolvedPartyManagement_InlineSchema1.xsd"/>
+    <output path="/InvolvedPartyManagement_InlineSchema1.xsd"/>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="searchRequest_Map">
+        <input namespace="http://com/ibm/ima/bps/SC042InvolvedPartyRegistration/InvolvedPartyManagement/v6/" path="mb:msg(searchInvolvedParty,assembly,XMLNSC,Properties)"/>
+        <output namespace="http://com/ibm/ima/bps/SC042InvolvedPartyRegistration/InvolvedPartyManagement/v6/" path="mb:msg(searchInvolvedParty,assembly,XMLNSC,Properties)"/>
+        <move>
+            <input path="Properties"/>
+            <output path="Properties"/>
+        </move>
+        <move>
+            <input path="searchInvolvedParty"/>
+            <output path="searchInvolvedParty"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

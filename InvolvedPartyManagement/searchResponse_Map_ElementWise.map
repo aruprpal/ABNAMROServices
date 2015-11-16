@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="default" version="8.0.4.0" xmlns="http://www.ibm.com/2008/ccl/Mapping" xmlns:map="default">
+    <input path="/InvolvedPartyManagement_InlineSchema1.xsd"/>
+    <output path="/InvolvedPartyManagement_InlineSchema1.xsd"/>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="searchResponse_Map_ElementWise">
+        <input namespace="http://com/ibm/ima/bps/SC042InvolvedPartyRegistration/InvolvedPartyManagement/v6/" path="mb:msg(searchInvolvedPartyResponse,assembly,XMLNSC,Properties)"/>
+        <output namespace="http://com/ibm/ima/bps/SC042InvolvedPartyRegistration/InvolvedPartyManagement/v6/" path="mb:msg(searchInvolvedPartyResponse,assembly,XMLNSC,Properties)"/>
+        <move>
+            <input path="Properties"/>
+            <output path="Properties"/>
+        </move>
+        <move>
+            <input path="searchInvolvedPartyResponse/responseHeader/commonHeader/consumerDetails/interfaceId"/>
+            <output path="searchInvolvedPartyResponse/responseHeader/commonHeader/consumerDetails/interfaceId"/>
+        </move>
+        <move>
+            <input path="searchInvolvedPartyResponse/involvedParties[1]/referenceId/identifier"/>
+            <output path="searchInvolvedPartyResponse/involvedParties/referenceId/identifier"/>
+        </move>
+        <move>
+            <input path="searchInvolvedPartyResponse/involvedParties[1]/referenceId/type"/>
+            <output path="searchInvolvedPartyResponse/involvedParties/referenceId/type"/>
+        </move>
+        <move>
+            <input path="searchInvolvedPartyResponse/involvedParties/hasLanguageSpecificDescription"/>
+            <output path="searchInvolvedPartyResponse/involvedParties/hasLanguageSpecificDescription"/>
+        </move>
+        <move>
+            <input path="searchInvolvedPartyResponse/involvedParties[1]/hasDefaultLanguageDescription"/>
+            <output path="searchInvolvedPartyResponse/involvedParties/hasDefaultLanguageDescription"/>
+        </move>
+        <move>
+            <input path="searchInvolvedPartyResponse/involvedParties[1]/contactPreferences[1]/dateRange"/>
+            <output path="searchInvolvedPartyResponse/involvedParties/contactPreferences/dateRange"/>
+        </move>
+        <move>
+            <input path="searchInvolvedPartyResponse/involvedParties/contactPreferences/contactPoints"/>
+            <output path="searchInvolvedPartyResponse/involvedParties/contactPreferences/contactPoints"/>
+        </move>
+        <move>
+            <input path="searchInvolvedPartyResponse/involvedParties[1]/contactPreferences[1]/prefersAsName"/>
+            <output path="searchInvolvedPartyResponse/involvedParties/contactPreferences/prefersAsName"/>
+        </move>
+        <move>
+            <input path="searchInvolvedPartyResponse/involvedParties[1]/contactPreferences[1]/identifier"/>
+            <output path="searchInvolvedPartyResponse/involvedParties/contactPreferences/identifier"/>
+        </move>
+        <move>
+            <input path="searchInvolvedPartyResponse/involvedParties[1]/isPlayingRole[1]/referenceId"/>
+            <output path="searchInvolvedPartyResponse/involvedParties/isPlayingRole/referenceId"/>
+        </move>
+        <move>
+            <input path="searchInvolvedPartyResponse/involvedParties/isPlayingRole/hasLanguageSpecificDescription"/>
+            <output path="searchInvolvedPartyResponse/involvedParties/isPlayingRole/hasLanguageSpecificDescription"/>
+        </move>
+        <move>
+            <input path="searchInvolvedPartyResponse/involvedParties/isPlayingRole/isRegisteredIn"/>
+            <output path="searchInvolvedPartyResponse/involvedParties/isRegisteredIn"/>
+        </move>
+        <move>
+            <input path="searchInvolvedPartyResponse/involvedParties[1]/involvedPartyDetail_TO"/>
+            <output path="searchInvolvedPartyResponse/involvedParties/involvedPartyDetail_TO"/>
+        </move>
+        <move>
+            <input path="searchInvolvedPartyResponse/involvedParties[1]/legalAddress"/>
+            <output path="searchInvolvedPartyResponse/involvedParties/legalAddress"/>
+        </move>
+        <move>
+            <input path="searchInvolvedPartyResponse/involvedParties/hasName"/>
+            <output path="searchInvolvedPartyResponse/involvedParties/hasName"/>
+        </move>
+        <move>
+            <input path="searchInvolvedPartyResponse/involvedParties/isPlayingRole/isRegulatorIn"/>
+            <output path="searchInvolvedPartyResponse/involvedParties/isRegulatorIn"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

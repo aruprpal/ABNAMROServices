@@ -1,0 +1,57 @@
+
+--to prepare SOAP Fault
+CREATE COMPUTE MODULE ErrorTransformation_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN  
+	BEGIN
+		CALL CopyMessageHeaders();		
+		DECLARE soap NAMESPACE 'http://schemas.xmlsoap.org/soap/envelope/';
+		DECLARE vMessageNumber INTEGER;
+		DECLARE vMessageText CHARACTER;
+
+		CALL GetLastExceptionDetail(InputExceptionList, vMessageNumber, vMessageText);
+		SET OutputRoot.XMLNSC.soap:Envelope.(XMLNSC.NamespaceDecl)xmlns:soap = soap;
+		SET OutputRoot.XMLNSC.soap:Envelope.soap:Body.soap:Fault.faultcode = 'soap:Server';
+		SET OutputRoot.XMLNSC.soap:Envelope.soap:Body.soap:Fault.faultstring = COALESCE(vMessageText, 'System.Web.Services.Protocols.SoapException: Server was unable to process request.');
+		SET OutputRoot.XMLNSC.soap:Envelope.soap:Body.soap:Fault.detail = 'Error';
+
+		RETURN TRUE;
+	END;
+
+	CREATE PROCEDURE GetLastExceptionDetail(IN InputTree REFERENCE, OUT messageNumber INTEGER, OUT messageText CHARACTER)
+	BEGIN
+		DECLARE ptrException REFERENCE to InputTree.*[1];
+		SET messageText = 'Error Details';
+
+		WHILE LASTMOVE(ptrException) DO
+			IF ptrException.Number IS NOT NULL THEN
+				SET messageNumber = ptrException.Number;
+
+				FOR rInsert AS ptrException.Insert[] DO
+					IF rInsert.Type = 5 THEN
+						SET messageText = messageText || ': ' || COALESCE(ptrException.Text, '') || ': ' || COALESCE(rInsert.Text, '');
+					END IF;
+				END FOR;
+
+			END IF;
+
+			MOVE ptrException LASTCHILD;
+		END WHILE; 
+	END;
+
+	CREATE PROCEDURE CopyMessageHeaders() BEGIN
+		DECLARE I INTEGER 1;
+		DECLARE J INTEGER;
+		SET J = CARDINALITY(InputRoot.*[]);
+		WHILE I < J DO
+			SET OutputRoot.*[I] = InputRoot.*[I];
+			SET I = I + 1;
+		END WHILE;
+	END;
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		SET OutputRoot = InputRoot;
+	END;
+END MODULE;
+
+
+

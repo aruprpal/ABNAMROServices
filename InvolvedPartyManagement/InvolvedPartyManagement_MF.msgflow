@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" 
+xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmSOAPInput.msgnode="ComIbmSOAPInput.msgnode" xmlns:Request_BeginSyncSOAPRequest.subflow="Request/BeginSyncSOAPRequest.subflow" xmlns:ComIbmSOAPRequest.msgnode="ComIbmSOAPRequest.msgnode" xmlns:Request_EndSyncSOAPRequest.subflow="Request/EndSyncSOAPRequest.subflow" xmlns:Reply_SOAPReply.subflow="Reply/SOAPReply.subflow" xmlns:Input_Input.subflow="Input/Input.subflow" xmlns:RequestTransformation.subflow="RequestTransformation.subflow" xmlns:ResponseTransformation.subflow="ResponseTransformation.subflow" xmlns:ErrorTransformation.subflow="ErrorTransformation.subflow" xmlns:FaultTransformation.subflow="FaultTransformation.subflow" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" 
+xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="InvolvedPartyManagement_MF.msgflow" 
+nsPrefix="InvolvedPartyManagement_MF.msgflow">
+<eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1">
+<eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.Operation_Name" name="Operation_Name" lowerBound="1"  defaultValueLiteral="searchInvolvedParty">
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.Service_Name" name="Service_Name" lowerBound="1"  defaultValueLiteral="searchInvolvedParty">
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.Version" name="Version" lowerBound="1"  defaultValueLiteral="1.0.0">
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+</eStructuralFeatures>
+<eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.System_Name" name="System_Name" lowerBound="1"  defaultValueLiteral="InvolvedPartyManagement">
+  <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+</eStructuralFeatures>
+<translation xmi:type="utility:TranslatableString" key="InvolvedPartyManagement_MF" bundleName="InvolvedPartyManagement_MF" pluginId="flowAPIgenerated"/>
+<colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/flowAPIgenerated/icons/full/obj16/InvolvedPartyManagement_MF.gif"/>
+<colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/flowAPIgenerated/icons/full/obj30/InvolvedPartyManagement_MF.gif"/>
+<composition>
+<nodes xmi:type="ComIbmSOAPInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="72,167" wsdlFileName="InvolvedPartyManagement.wsdl" selectedPortType="InvolvedPartyManagement" selectedBinding="InvolvedPartyManagement" selectedPort="IInvolvedPartyManagementPort" targetNamespace="http://com/ibm/ima/bps/SC042InvolvedPartyRegistration/InvolvedPartyManagement/v6/" useHTTPTransport="true" urlSelector="/InvolvedPartyManagement" allowQueryWSDL="true">
+<translation xmi:type="utility:ConstantString" string="SOAP Input"/>
+</nodes>
+<nodes xmi:type="Request_BeginSyncSOAPRequest.subflow:FCMComposite_1" xmi:id="FCMComposite_1_3" location="369,159" System_Name="StubService">
+<translation xmi:type="utility:ConstantString" string="BeginSyncSOAPRequest"/>
+</nodes>
+<nodes xmi:type="ComIbmSOAPRequest.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_4" location="508,159" wsdlOperationMode="gateway" wsdlFileName="InvolvedPartyManagement.wsdl" selectedPortType="InvolvedPartyManagement" selectedBinding="InvolvedPartyManagement" selectedOperation="searchInvolvedParty" selectedPort="IInvolvedPartyManagementPort" targetNamespace="http://com/ibm/ima/bps/SC042InvolvedPartyRegistration/InvolvedPartyManagement/v6/" useHTTPTransport="true" webServiceURL="http://localhost:7080/virtualize/" requestTimeout="180" sslProtocol="TLS" parserXmlnscBuildTreeUsingXMLSchema="false" validateMaster="none">
+<translation xmi:type="utility:ConstantString" string="SOAP Request"/>
+</nodes>
+<nodes xmi:type="Request_EndSyncSOAPRequest.subflow:FCMComposite_1" xmi:id="FCMComposite_1_5" location="612,163">
+<translation xmi:type="utility:ConstantString" string="EndSyncSOAPRequest"/>
+</nodes>
+<nodes xmi:type="Reply_SOAPReply.subflow:FCMComposite_1" xmi:id="FCMComposite_1_6" location="864,167">
+<translation xmi:type="utility:ConstantString" string="SOAPReply"/>
+</nodes>
+<nodes xmi:type="Input_Input.subflow:FCMComposite_1" xmi:id="FCMComposite_1_7" location="161,163" Operation_Name="testOperation" Service_Name="TestService" Version="1.0.0">
+<translation xmi:type="utility:ConstantString" string="Input"/>
+</nodes>
+<nodes xmi:type="RequestTransformation.subflow:FCMComposite_1" xmi:id="FCMComposite_1_15" location="237,159">
+<translation xmi:type="utility:ConstantString" string="RequestTransformation"/>
+</nodes>
+<nodes xmi:type="ResponseTransformation.subflow:FCMComposite_1" xmi:id="FCMComposite_1_16" location="724,56">
+<translation xmi:type="utility:ConstantString" string="ResponseTransformation"/>
+</nodes>
+<nodes xmi:type="ErrorTransformation.subflow:FCMComposite_1" xmi:id="FCMComposite_1_17" location="230,258">
+<translation xmi:type="utility:ConstantString" string="ErrorTransformation"/>
+</nodes>
+<nodes xmi:type="FaultTransformation.subflow:FCMComposite_1" xmi:id="FCMComposite_1_2" location="744,167">
+<translation xmi:type="utility:ConstantString" string="FaultTransformation"/>
+</nodes>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_4" sourceNode="FCMComposite_1_3" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="FCMComposite_1_5" sourceNode="FCMComposite_1_4" sourceTerminalName="OutTerminal.fault" targetTerminalName="InTerminal.Input1"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_3" targetNode="FCMComposite_1_7" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_4" targetNode="FCMComposite_1_7" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input1"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_5" targetNode="FCMComposite_1_7" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.timeout" targetTerminalName="InTerminal.Input2"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_6" targetNode="FCMComposite_1_7" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.catch" targetTerminalName="InTerminal.Input2"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_7" targetNode="FCMComposite_1_15" sourceNode="FCMComposite_1_7" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.Input"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_8" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_15" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.Input"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_9" targetNode="FCMComposite_1_17" sourceNode="FCMComposite_1_7" sourceTerminalName="OutTerminal.Output1" targetTerminalName="InTerminal.Input"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_10" targetNode="FCMComposite_1_6" sourceNode="FCMComposite_1_17" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.Input">
+<bendPoints>462,-9,-25,88</bendPoints>
+</connections>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_11" targetNode="FCMComposite_1_5" sourceNode="FCMComposite_1_4" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_12" targetNode="FCMComposite_1_16" sourceNode="FCMComposite_1_5" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.Input"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_13" targetNode="FCMComposite_1_2" sourceNode="FCMComposite_1_5" sourceTerminalName="OutTerminal.Output1" targetTerminalName="InTerminal.Input"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_14" targetNode="FCMComposite_1_6" sourceNode="FCMComposite_1_2" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.Input"/>
+<connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_15" targetNode="FCMComposite_1_6" sourceNode="FCMComposite_1_16" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.Input"/>
+</composition>
+<propertyOrganizer>
+<propertyDescriptor groupName="Group.ESB" configurable="true" userDefined="true" describedAttribute="Property.Operation_Name">
+<propertyName xmi:type="utility:TranslatableString" key="Property.Operation_Name" bundleName="Input/Input" pluginId="ESB_Framework"/>
+<propertyDescriptor groupName="Group.ESB" configurable="true" userDefined="true" describedAttribute="Property.Service_Name">
+<propertyName xmi:type="utility:TranslatableString" key="Property.Service_Name" bundleName="Input/Input" pluginId="ESB_Framework"/>
+<propertyDescriptor groupName="Group.ESB" configurable="true" userDefined="true" describedAttribute="Property.Version">
+<propertyName xmi:type="utility:TranslatableString" key="Property.Version" bundleName="Input/Input" pluginId="ESB_Framework"/>
+<propertyDescriptor groupName="Group.ESB" configurable="true" userDefined="true" describedAttribute="Property.System_Name">
+<propertyName xmi:type="utility:TranslatableString" key="Property.System_Name" bundleName="Request/BeginSyncSOAPRequest" pluginId="ESB_Framework"/>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyDescriptor>
+</propertyOrganizer>
+<attributeLinks promotedAttribute="Property.Operation_Name" overriddenNodes="FCMComposite_1_7">
+<overriddenAttribute href="Input/Input.subflow#Property.Operation_Name"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.Service_Name" overriddenNodes="FCMComposite_1_7">
+<overriddenAttribute href="Input/Input.subflow#Property.Service_Name"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.Version" overriddenNodes="FCMComposite_1_7">
+<overriddenAttribute href="Input/Input.subflow#Property.Version"/>
+</attributeLinks>
+<attributeLinks promotedAttribute="Property.System_Name" overriddenNodes="FCMComposite_1_3">
+<overriddenAttribute href="Request/BeginSyncSOAPRequest.subflow#Property.System_Name"/>
+</attributeLinks>
+<stickyBoard/>
+</eClassifiers>
+</ecore:EPackage>
